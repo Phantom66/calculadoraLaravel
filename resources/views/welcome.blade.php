@@ -40,7 +40,7 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title">Andres Calculadora</div>
+				<div class="title">Andres Probando Rutas "Calculadora"</div>
 				<div class="quote">{{ Inspiring::quote() }}</div>
 			</div>
 		</div>
