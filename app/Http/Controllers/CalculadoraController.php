@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use App\Calculadora;
+
 class CalculadoraController extends Controller {
 
   /**
@@ -32,9 +34,37 @@ class CalculadoraController extends Controller {
    *
    * @return Response
    */
-  public function store(Request $request)
+  public function store(Request $datos)
   {
-    return $request->all();
+    $operando = $datos->input('operando');
+
+    if ($operando === '')
+    {
+      return redirect()->action('CalculadoraController@create');
+    }
+
+    $calculadora = new Calculadora;
+
+    if($operando === '1')
+    {
+      $calculadora->valorUno = $datos->input('valorUno');
+      $calculadora->valorDos = $datos->input('valorDos');
+      $calculadora->sumar();
+      return $calculadora->resultado;
+    }
+    elseif($operando === '2')
+    {
+      return 'restando';
+    }
+    elseif($operando === '3')
+    {
+
+    }
+    elseif($operando === '4')
+    {
+
+    }
+    return $datos->input('valorDos');
   }
 
   /**
