@@ -14,7 +14,7 @@ class CalculadoraController extends Controller {
    */
   public function index()
   {
-    return 'hola!';
+    return 'esto es el index de las calculadoras!';
   }
 
   /**
@@ -24,7 +24,7 @@ class CalculadoraController extends Controller {
    */
   public function create()
   {
-    //
+    return view('calculadora.create');
   }
 
   /**
