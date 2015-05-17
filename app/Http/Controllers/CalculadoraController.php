@@ -50,7 +50,10 @@ class CalculadoraController extends Controller {
       $calculadora->valorUno = $datos->input('valorUno');
       $calculadora->valorDos = $datos->input('valorDos');
       $calculadora->sumar();
-      return $calculadora->resultado;
+
+      $resultado = $calculadora->resultado;
+      $operacion = 'Suma';
+      return view('calculadora.resultado', compact('resultado', 'operacion'));
     }
     elseif($operando === '2')
     {
